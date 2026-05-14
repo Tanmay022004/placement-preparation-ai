@@ -8,13 +8,13 @@ PrepAI is a modern full stack web application designed to help students prepare 
 
 # 🌐 Live Demo
 
-🔗 Live Website: https://your-vercel-app.vercel.app
+🔗 Live Website: https://prep-ai-seven-sigma.vercel.app/
 
 ---
 
 # 🔗 Repository
 
-GitHub Repo: https://github.com/yourusername/prepai
+GitHub Repo: https://github.com/Tanmay022004/placement-preparation-ai.git
 
 ---
 
