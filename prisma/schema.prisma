@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  clerkId       String   @unique
+  email         String   @unique
+  name          String?
+  createdAt     DateTime @default(now())
+
+  quizResults   QuizResult[]
+  codingResults CodingResult[]
+}
+
+model QuizQuestion {
+  id          String @id @default(cuid())
+  question    String
+  optionA     String
+  optionB     String
+  optionC     String
+  optionD     String
+  answer      String
+  category    String
+}
+
+model QuizResult {
+  id        String   @id @default(cuid())
+  score     Int
+  userId    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model CodingProblem {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  difficulty  String
+}
+
+model CodingResult {
+  id        String   @id @default(cuid())
+  score     Int
+  userId    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
